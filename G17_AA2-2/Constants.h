@@ -10,9 +10,14 @@ const std::string MENU_BG = "MENU_BG";
 const std::string PLAY_BG = "PLAY_BG";
 const std::string PLAY_GOLD = "PLAY_GOLD";
 const std::string PLAYER_SPRITE = "PLAYER_SPRITE";
+const std::string PLAYER_SPRITE2 = "PLAYER_SPRITE2";
 const std::string PLAY_TEXT_SCORE_PLAYER1 = "PLAY_TEXT_SCORE_PLAYER1";
 const std::string MENU_TEXT_BUTTON_PLAY = "MENU_TEXT_BUTTON_PLAY";
 const std::string MENU_TEXT_BUTTON_EXIT = "MENU_TEXT_BUTTON_EXIT";
+
+const std::string ITEMS = "ITEMS";
+const std::string EXPLOSION = "EXPLOSION";
+const std::string LEVEL2 = "LEVEL2";
 
 const std::string PATH_IMG = "../res/img/";
 const std::string PATH_FONT = "../res/ttf/";

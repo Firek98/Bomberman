@@ -1,0 +1,263 @@
+<mapa>
+//Muro superior
+	<casilla x=0 y=0>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=1 y=0>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=2 y=0>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=3 y=0>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=4 y=0>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=5 y=0>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=6 y=0>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=7 y=0>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=8 y=0>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=9 y=0>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=10 y=0>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=11 y=0>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=12 y=0>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=13 y=0>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=14 y=0>
+		<tipo>Muro</tipo>
+	</casilla>
+	
+//Muro izquierdo
+	<casilla x=0 y =1>
+		<tipo>Muro</Muro>
+	</casilla>
+	<casilla x=0 y =2>
+		<tipo>Muro</Muro>
+	</casilla>
+	<casilla x=0 y =3>
+		<tipo>Muro</Muro>
+	</casilla>
+	<casilla x=0 y =4>
+		<tipo>Muro</Muro>
+	</casilla>
+	<casilla x=0 y =5>
+		<tipo>Muro</Muro>
+	</casilla>
+	<casilla x=0 y =6>
+		<tipo>Muro</Muro>
+	</casilla>
+	<casilla x=0 y =7>
+		<tipo>Muro</Muro>
+	</casilla>
+	<casilla x=0 y =8>
+		<tipo>Muro</Muro>
+	</casilla>
+	<casilla x=0 y =9>
+		<tipo>Muro</Muro>
+	</casilla>
+	<casilla x=0 y =10>
+		<tipo>Muro</Muro>
+	</casilla>
+	<casilla x=0 y =11>
+		<tipo>Muro</Muro>
+	</casilla>
+
+//Muro derecho
+	<casilla x=14 y =1>
+		<tipo>Muro</Muro>
+	</casilla>
+	<casilla x=14 y =2>
+		<tipo>Muro</Muro>
+	</casilla>
+	<casilla x=14 y =3>
+		<tipo>Muro</Muro>
+	</casilla>
+	<casilla x=14 y =4>
+		<tipo>Muro</Muro>
+	</casilla>
+	<casilla x=14 y =5>
+		<tipo>Muro</Muro>
+	</casilla>
+	<casilla x=14 y =6>
+		<tipo>Muro</Muro>
+	</casilla>
+	<casilla x=14 y =7>
+		<tipo>Muro</Muro>
+	</casilla>
+	<casilla x=14 y =8>
+		<tipo>Muro</Muro>
+	</casilla>
+	<casilla x=14 y =9>
+		<tipo>Muro</Muro>
+	</casilla>
+	<casilla x=14 y =10>
+		<tipo>Muro</Muro>
+	</casilla>
+	<casilla x=14 y =11>
+		<tipo>Muro</Muro>
+	</casilla>
+	
+//Muro inferior
+	<casilla x=0 y=12>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=1 y=12>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=2 y=12>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=3 y=12>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=4 y=12>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=5 y=12>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=6 y=12>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=7 y=12>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=8 y=12>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=9 y=12>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=10 y=12>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=11 y=12>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=12 y=12>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=13 y=12>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=14 y=12>
+		<tipo>Muro</tipo>
+	</casilla>
+	
+//Muros intermedios
+	<casilla x=2 y=2>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=2 y=4>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=2 y=6>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=2 y=8>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=2 y=10>
+		<tipo>Muro</tipo>
+	</casilla>
+	
+	<casilla x=4 y=2>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=4 y=4>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=4 y=6>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=4 y=8>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=4 y=10>
+		<tipo>Muro</tipo>
+	</casilla>
+	
+	<casilla x=6 y=2>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=6 y=4>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=6 y=6>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=6 y=8>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=6 y=10>
+		<tipo>Muro</tipo>
+	</casilla>
+	
+	<casilla x=8 y=2>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=8 y=4>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=8 y=6>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=8 y=8>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=8 y=10>
+		<tipo>Muro</tipo>
+	</casilla>
+	
+	<casilla x=10 y=2>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=10 y=4>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=10 y=6>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=10 y=8>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=10 y=10>
+		<tipo>Muro</tipo>
+	</casilla>
+	
+	<casilla x=12 y=2>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=12 y=4>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=12 y=6>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=12 y=8>
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x=12 y=10>
+		<tipo>Muro</tipo>
+	</casilla>
+</mapa>
+15*13
