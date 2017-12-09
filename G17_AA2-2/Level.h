@@ -24,5 +24,5 @@ public:
 	bool j1;
 	bool j2;
 
-	GameObject *map[13][11];
+	GameObject *map[11][13];
 };

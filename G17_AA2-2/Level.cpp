@@ -12,15 +12,16 @@ Level::Level()
 
 	int w, h;
 
-	w = SCREEN_WIDTH / 15;
-	h = (SCREEN_HEIGHT - 80) / 13;
+	w = ITEM_SIZE;
+	h = SCREEN_HEIGHT - ITEM_SIZE * 12;
 
 	rapidxml::xml_document<> document;
-	std::ifstream archivo(PATH_IMG + "m.xml");
+	std::ifstream archivo(PATH_IMG + "mapamaquinola2.xml");
 	std::stringstream buffer;
 	buffer << archivo.rdbuf();
 	archivo.close();
 	std::string cont(buffer.str());
+	document.parse<0>(&cont[0]);
 	rapidxml::xml_node<> *raiz = document.first_node();
 	rapidxml::xml_node<> *nodo1 = raiz->first_node();
 	rapidxml::xml_attribute<> *atr = nodo1->first_attribute();
@@ -32,14 +33,14 @@ Level::Level()
 	int auxY;
 	auxY = atoi(strung.c_str());
 
-	for (int i = 0; i < 13; i++)
+	for (int i = 0; i < 11; i++)
 	{
 
-		w = SCREEN_WIDTH / 15;
+		w = ITEM_SIZE;
 
-		for (int j = 0; j < 11; j++)
+		for (int j = 0; j < 13; j++)
 		{
-			if (i == auxX && j == auxY)
+			if (i == auxY && j == auxX)
 			{
 				rapidxml::xml_node<> *nodo2 = nodo1->first_node();
 				strung = nodo2->value();
@@ -51,11 +52,9 @@ Level::Level()
 					if (atr != nullptr)
 					{
 						strung = atr->value();
-						int auxX;
 						auxX = atoi(strung.c_str());
 						atr = atr->next_attribute();
 						strung = atr->value();
-						int auxY;
 						auxY = atoi(strung.c_str());
 					}
 				}
@@ -67,11 +66,9 @@ Level::Level()
 					if (atr != nullptr)
 					{
 						strung = atr->value();
-						int auxX;
 						auxX = atoi(strung.c_str());
 						atr = atr->next_attribute();
 						strung = atr->value();
-						int auxY;
 						auxY = atoi(strung.c_str());
 					}
 				}
@@ -86,8 +83,10 @@ Level::Level()
 			h += ITEM_SIZE;
 	}
 
-	jugador1 = new Player(3);
-	jugador2 = new Player(3);
+	map[11][2];
+
+//	jugador1 = new Player(3);
+//	jugador2 = new Player(3);
 	j1 = false;
 	j2 = false;
 }
@@ -133,14 +132,13 @@ void Level::Draw()
 {
 	Renderer::Instance()->Clear();
 	Renderer::Instance()->PushImage(PLAY_BG, {0,0,SCREEN_WIDTH, SCREEN_HEIGHT});
-	for (int i = 0; i < 13; i++)
+	for (int i = 0; i < 11; i++)
 	{
-		for (int j = 0; j < 11; j++)
+		for (int j = 0; j < 13; j++)
 		{
 			map[i][j]->Draw();
 		}
 	}
-
 	Renderer::Instance()->Render();
 }
 

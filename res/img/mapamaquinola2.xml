@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mapa>
+	<casilla x="2" y="0">
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x="4" y="0">
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x="6" y="0">
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x="8" y="0">
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x="1" y="1">
+		<tipo>MuroI</tipo>
+	</casilla>
+	<casilla x="2" y="1">
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x="3" y="1">
+		<tipo>MuroI</tipo>
+	</casilla>
+	<casilla x="5" y="1">
+		<tipo>MuroI</tipo>
+	</casilla>
+	<casilla x="7" y="1">
+		<tipo>MuroI</tipo>
+	</casilla>
+	<casilla x="8" y="1">
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x="9" y="1">
+		<tipo>MuroI</tipo>
+	</casilla>
+	<casilla x="11" y="1">
+		<tipo>MuroI</tipo>
+	</casilla>
+	<casilla x="2" y="2">
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x="3" y="2">
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x="5" y="2">
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x="6" y="2">
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x="8" y="2">
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x="11" y="2">
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x="1" y="3">
+		<tipo>MuroI</tipo>
+	</casilla>
+	<casilla x="3" y="3">
+		<tipo>MuroI</tipo>
+	</casilla>
+	<casilla x="4" y="3">
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x="5" y="3">
+		<tipo>MuroI</tipo>
+	</casilla>
+	<casilla x="7" y="3">
+		<tipo>MuroI</tipo>
+	</casilla>
+	<casilla x="9" y="3">
+		<tipo>MuroI</tipo>
+	</casilla>
+	<casilla x="12" y="3">
+		<tipo>MuroI</tipo>
+	</casilla>
+	<casilla x="1" y="4">
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x="6" y="4">
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x="7" y="4">
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x="10" y="4">
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x="1" y="5">
+		<tipo>MuroI</tipo>
+	</casilla>
+	<casilla x="3" y="5">
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x="5" y="5">
+		<tipo>MuroI</tipo>
+	</casilla>
+	<casilla x="7" y="5">
+		<tipo>MuroI</tipo>
+	</casilla>
+	<casilla x="9" y="5">
+		<tipo>MuroI</tipo>
+	</casilla>
+	<casilla x="11" y="5">
+		<tipo>MuroI</tipo>
+	</casilla>
+	<casilla x="3" y="6">
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x="8" y="6">
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x="11" y="6">
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x="0" y="7">
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x="1" y="7">
+		<tipo>MuroI</tipo>
+	</casilla>
+	<casilla x="3" y="7">
+		<tipo>MuroI</tipo>
+	</casilla>
+	<casilla x="5" y="7">
+		<tipo>MuroI</tipo>
+	</casilla>
+	<casilla x="7" y="7">
+		<tipo>MuroI</tipo>
+	</casilla>
+	<casilla x="9" y="7">
+		<tipo>MuroI</tipo>
+	</casilla>
+	<casilla x="11" y="7">
+		<tipo>MuroI</tipo>
+	</casilla>
+	<casilla x="12" y="7">
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x="0" y="8">
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x="1" y="8">
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x="6" y="8">
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x="10" y="8">
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x="1" y="9">
+		<tipo>MuroI</tipo>
+	</casilla>
+	<casilla x="3" y="9">
+		<tipo>MuroI</tipo>
+	</casilla>
+	<casilla x="4" y="9">
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x="5" y="9">
+		<tipo>MuroI</tipo>
+	</casilla>
+	<casilla x="6" y="9">
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x="7" y="9">
+		<tipo>MuroI</tipo>
+	</casilla>
+	<casilla x="9" y="9">
+		<tipo>MuroI</tipo>
+	</casilla>
+	<casilla x="10" y="9">
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x="11" y="9">
+		<tipo>MuroI</tipo>
+	</casilla>
+	<casilla x="3" y="10">
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x="6" y="10">
+		<tipo>Muro</tipo>
+	</casilla>
+	<casilla x="9" y="10">
+		<tipo>Muro</tipo>
+	</casilla>
+	<tiempo>3</tiempo>
+	<vidas>3</vidas>
+</mapa>

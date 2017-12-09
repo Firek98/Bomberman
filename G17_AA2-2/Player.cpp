@@ -2,7 +2,7 @@
 
 
 
-Player::Player(int a)
+Player::Player(int a, SDL_Rect recta)
 {
 	vida = a;
 
@@ -17,7 +17,7 @@ Player::Player(int a)
 	PlayerSize.y = PlayerSize.y / 4;
 
 	sprites = { PlayerSize.x, PlayerSize.y * 2, PlayerSize.x, PlayerSize.y };
-	pos = { 0,0, ITEM_SIZE, ITEM_SIZE };
+	pos = recta;
 
 	powerUp = PowerUp::NOTHING;
 }
@@ -88,4 +88,9 @@ void Player::movePlayer(positions a)
 		break;
 	}
 
+}
+
+void Player::Draw()
+{
+	Renderer::Instance()->PushSprite(PLAYER_SPRITE, sprites, pos);
 }

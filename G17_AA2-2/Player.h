@@ -1,10 +1,11 @@
 #pragma once
 #include "Renderer.h"
-class Player 
+#include "GameObject.h"
+class Player : public GameObject
 {
 
 public:
-	Player(int a);
+	Player(int a, SDL_Rect recta);
 	~Player();
 
 	int vida;
@@ -14,6 +15,8 @@ public:
 	int Puntuation;
 	
 	void movePlayer(positions a);
+
+	void Draw() override;
 
 protected:
 

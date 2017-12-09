@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <mapa>
-	
+
 		<casilla x="2" y="0">
 			<tipo>MuroI</tipo>
 		</casilla>
@@ -189,11 +189,9 @@
 		<casilla x="10" y="10">
 			<tipo>MuroI</tipo>
 		</casilla>
-		
-		//Tiempo
+	
 		<tiempo time= "4"></tiempo>
-		
-		//Vidas
+	
 		<vida life= "3"></vida>
 	
 </mapa>
