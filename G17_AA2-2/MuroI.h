@@ -1,11 +1,11 @@
 #pragma once
 #include "GameObject.h"
-class PUP :
+class MuroI :
 	public GameObject
 {
 public:
-	PUP(SDL_Rect recta, PowerUp powerup);
-	~PUP();
+	MuroI(SDL_Rect recta);
+	~MuroI();
 
 	void Draw() override;
 };

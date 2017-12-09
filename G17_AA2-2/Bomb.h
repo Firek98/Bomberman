@@ -4,7 +4,9 @@ class Bomb :
 	public GameObject
 {
 public:
-	Bomb();
+	Bomb(SDL_Rect recta);
 	~Bomb();
+
+	void Draw() override;
 };
 

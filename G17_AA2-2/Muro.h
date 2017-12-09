@@ -4,7 +4,9 @@ class Muro :
 	public GameObject
 {
 public:
-	Muro();
+	Muro(SDL_Rect recta);
 	~Muro();
+
+	void Draw()override;
 };
 

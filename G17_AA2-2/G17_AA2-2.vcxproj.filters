@@ -48,6 +48,9 @@
     <ClCompile Include="Bomb.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MuroI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Types.h">
@@ -84,6 +87,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Bomb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MuroI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -122,6 +122,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Muro.cpp" />
+    <ClCompile Include="MuroI.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PUP.cpp" />
     <ClCompile Include="Renderer.cpp" />
@@ -135,6 +136,7 @@
     <ClInclude Include="Level.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Muro.h" />
+    <ClInclude Include="MuroI.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PUP.h" />
     <ClInclude Include="Renderer.h" />
