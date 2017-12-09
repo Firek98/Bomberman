@@ -6,6 +6,11 @@
 #define SCREEN_WIDTH 720
 #define SCREEN_HEIGHT 704
 
+#define HUD_WIDTH 624
+#define HUD_HEIGHT 80
+
+#define ITEM_SIZE 48
+
 const std::string MENU_BG = "MENU_BG";
 const std::string PLAY_BG = "PLAY_BG";
 const std::string PLAY_GOLD = "PLAY_GOLD";
@@ -31,3 +36,6 @@ const std::string BUTTON2 = "BUTTON2";
 const std::string BUTTONRANK = "BUTTONRANK";
 const std::string BUTTONMUSIC = "BUTTONMUSIC";
 const std::string BUTTONEXIT = "BUTTONEXIT";
+
+
+

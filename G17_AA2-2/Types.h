@@ -1,6 +1,12 @@
 #pragma once
 #include <string>
 #include <SDL.h>
+#include "../dep/inc/XML/rapidxml.hpp"
+#include "../dep/inc/XML/rapidxml_iterators.hpp"
+#include "../dep/inc/XML/rapidxml_print.hpp"
+#include "../dep/inc/XML/rapidxml_utils.hpp"
+#include <sstream>
+#include <iostream>
 
 	using Rect = struct  Rect{ int  x; int y; int w; int h; };
 
@@ -24,6 +30,14 @@
 
 	enum class Key {UP, DOWN, LEFT, RIGHT, NONE};
 
-	
+	enum class PowerUp
+	{
+		PATINES, CASCO, NOTHING
+	};
+
+	enum class positions {
+
+		ARRIBA, ABAJO, IZQUIERDA, DERECHA
+	};
 
 

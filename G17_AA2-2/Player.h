@@ -3,11 +3,6 @@
 class Player 
 {
 
-	enum PowerUp
-	{
-		PATINES, CASCO, NOTHING
-	};
-
 public:
 	Player(int a);
 	~Player();
@@ -17,9 +12,8 @@ public:
 	bool invencible;
 	bool bombSet;
 	int Puntuation;
-
 	
-	void movePlayer();
+	void movePlayer(positions a);
 
 protected:
 

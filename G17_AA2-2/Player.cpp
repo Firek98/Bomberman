@@ -17,9 +17,9 @@ Player::Player(int a)
 	PlayerSize.y = PlayerSize.y / 4;
 
 	sprites = { PlayerSize.x, PlayerSize.y * 2, PlayerSize.x, PlayerSize.y };
-	pos = { 0,0, 48,48 };
+	pos = { 0,0, ITEM_SIZE, ITEM_SIZE };
 
-	powerUp = NOTHING;
+	powerUp = PowerUp::NOTHING;
 }
 
 
@@ -27,6 +27,65 @@ Player::~Player()
 {
 }
 
-void Player::movePlayer()
+void Player::movePlayer(positions a)
 {
+
+	switch (a)
+	{
+	case positions::ARRIBA:
+
+		if (powerUp == PowerUp::PATINES)
+		{
+			pos.y -= velocidad * 1.8;
+		}
+		else
+		{
+			pos.y -= velocidad;
+		}
+
+		break;
+
+	case positions::ABAJO:
+
+		if (powerUp == PowerUp::PATINES)
+		{
+			pos.y += velocidad * 1.8;
+		}
+		else
+		{
+			pos.y += velocidad;
+		}
+
+		break;
+
+	case positions::IZQUIERDA:
+
+		if (powerUp == PowerUp::PATINES)
+		{
+			pos.x -= velocidad * 1.8;
+		}
+		else
+		{
+			pos.x -= velocidad;
+		}
+
+		break;
+
+	case positions::DERECHA:
+
+		if (powerUp == PowerUp::PATINES)
+		{
+			pos.x += velocidad * 1.8;
+		}
+		else
+		{
+			pos.x += velocidad;
+		}
+
+		break;
+
+	default:
+		break;
+	}
+
 }
