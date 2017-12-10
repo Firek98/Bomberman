@@ -1,7 +1,6 @@
 #include "Bomb.h"
 
 
-
 Bomb::Bomb(SDL_Rect recta)
 {
 	pos = recta;
