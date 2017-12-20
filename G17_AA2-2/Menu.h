@@ -15,4 +15,5 @@ public:
 	std::unordered_map<char, SDL_Rect>menu;
 	Renderer *rend;
 	SDL_Event evento;
+	bool señal;
 };
