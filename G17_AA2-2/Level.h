@@ -10,7 +10,7 @@ class Level :
 	public Scene
 {
 public:
-	Level();
+	Level(int levelNum);
 	~Level();
 	void handleEvent() override;
 	void Draw() override;

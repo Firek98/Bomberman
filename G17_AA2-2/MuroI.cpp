@@ -4,6 +4,7 @@
 
 MuroI::MuroI(SDL_Rect recta)
 {
+	tipo = GOtypes::MUROI;
 	pos = recta;
 	Vector2 vect = Renderer::Instance()->GetTextureSize(ITEMS);
 

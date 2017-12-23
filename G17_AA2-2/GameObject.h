@@ -1,5 +1,6 @@
 #pragma once
 #include "Renderer.h"
+#include "Types.h"
 
 class GameObject
 {
@@ -11,6 +12,7 @@ public:
 	SDL_Rect sprites;
 	SDL_Rect pos;
 
+	GOtypes tipo;
 
 	virtual void Draw();
 };

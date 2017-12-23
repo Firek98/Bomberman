@@ -30,14 +30,14 @@ void Game::Running()
 		{
 			delete(game);
 			actual = LVL1;
-			game = new Level();
+			game = new Level(1);
 		}
 
 		else if (game->estado == GOTO2)
 		{
 			delete(game);
 			actual = LVL2;
-			game = new Level();
+			game = new Level(1);
 		}
 
 	/*	else if (game->estado == GOTOR)

@@ -1,12 +1,16 @@
 #pragma once
 #include "Renderer.h"
 #include "GameObject.h"
+#include "Types.h"
+
 class Player : public GameObject
 {
 
 public:
-	Player(int a, SDL_Rect recta);
+	Player(int a, SDL_Rect recta, GameObject *map[11][13]);
 	~Player();
+
+	GameObject *myMap[11][13];
 
 	int vida;
 	float velocidad;
@@ -24,6 +28,8 @@ public:
 	bool izq;
 	bool derecha;
 	bool abajo;
+
+	//GameObject *map[11][13];
 
 protected:
 

@@ -2,13 +2,15 @@
 
 
 
-Level::Level()
+Level::Level(int levelNum)
 {
 	Renderer::Instance()->LoadTexture(PLAY_BG, PATH_IMG + "bgGame.jpg");
 	Renderer::Instance()->LoadTexture(PLAYER_SPRITE, PATH_IMG + "player1.png");
-	Renderer::Instance()->LoadTexture(PLAYER_SPRITE, PATH_IMG + "player2.png");
+	Renderer::Instance()->LoadTexture(PLAYER_SPRITE2, PATH_IMG + "player2.png");
 	Renderer::Instance()->LoadTexture(ITEMS, PATH_IMG + "items.png");
 	Renderer::Instance()->LoadTexture(EXPLOSION, PATH_IMG + "explosion.png");
+
+	//jugador1 = new Player(3, { SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 , ITEM_SIZE, ITEM_SIZE });
 
 	int w, h;
 
@@ -16,77 +18,99 @@ Level::Level()
 	h = SCREEN_HEIGHT - ITEM_SIZE * 12;
 
 	rapidxml::xml_document<> document;
+	/*if (lvl == 1)
+	{
+	std::ifstream archivo(PATH_IMG + "m.xml");
+	}
+	else
+	{
 	std::ifstream archivo(PATH_IMG + "mapamaquinola2.xml");
+	}*/
+	std::ifstream archivo;
+	archivo.open(PATH_FILES + "config.xml");
+
 	std::stringstream buffer;
 	buffer << archivo.rdbuf();
+
 	archivo.close();
+
 	std::string cont(buffer.str());
 	document.parse<0>(&cont[0]);
+
 	rapidxml::xml_node<> *raiz = document.first_node();
-	rapidxml::xml_node<> *nodo1 = raiz->first_node();
+	rapidxml::xml_node<> *nodo1 = raiz->first_node(); ///// Gets level
+	rapidxml::xml_node<> *nodo2 = nodo1->first_node(); //// Gets destructible/fixed
+	rapidxml::xml_node<> *nodo3 = nodo2->first_node(); //// Gets wall
+
 	rapidxml::xml_attribute<> *atr = nodo1->first_attribute();
+	//rapidxml::xml_attribute<> *myAtr = nodo1->first_attribute();
+	rapidxml::xml_attribute<> *myAtr;
+
 	std::string strung = atr->value();
+
 	int auxX;
 	auxX = atoi(strung.c_str());
+
 	atr = atr->next_attribute();
 	strung = atr->value();
+
 	int auxY;
 	auxY = atoi(strung.c_str());
 
-	for (int i = 0; i < 11; i++)
+	int i, j;
+
+	///--------------------------------------------------------------------------------------------------------------------
+	for (int x = 0; x < 11; x++)
 	{
-
-		w = ITEM_SIZE;
-
-		for (int j = 0; j < 13; j++)
+		for (int y = 0; y < 13; y++)
 		{
-			if (i == auxY && j == auxX)
-			{
-				rapidxml::xml_node<> *nodo2 = nodo1->first_node();
-				strung = nodo2->value();
-				if (strung == "Muro")
-				{
-					map[i][j] = new Muro({w, h, ITEM_SIZE, ITEM_SIZE});
-					nodo1 = nodo1->next_sibling();
-					atr = nodo1->first_attribute();
-					if (atr != nullptr)
-					{
-						strung = atr->value();
-						auxX = atoi(strung.c_str());
-						atr = atr->next_attribute();
-						strung = atr->value();
-						auxY = atoi(strung.c_str());
-					}
-				}
-				else if (strung == "MuroI") 
-				{
-					map[i][j] = new MuroI({ w, h, ITEM_SIZE, ITEM_SIZE });
-					nodo1 = nodo1->next_sibling();
-					atr = nodo1->first_attribute();
-					if (atr != nullptr)
-					{
-						strung = atr->value();
-						auxX = atoi(strung.c_str());
-						atr = atr->next_attribute();
-						strung = atr->value();
-						auxY = atoi(strung.c_str());
-					}
-				}
-			}
-			else
-			{
-				map[i][j] = new GameObject({ w, h, ITEM_SIZE, ITEM_SIZE });
-			}
-			
-			w += ITEM_SIZE;
+			map[x][y] = new GameObject();
 		}
-			h += ITEM_SIZE;
 	}
 
-	map[11][2];
+	for (nodo1; nodo1; nodo1 = nodo1->next_sibling())
+	{
+		myAtr = nodo1->first_attribute();
+		int a = atoi(myAtr->value());
+		std::cout << a << std::endl;
+		if (atoi(myAtr->value()) == levelNum)
+		{
+			//Destructible
 
-	jugador1 = new Player(3, {100, 50, 48,48});
-	jugador2 = new Player(3, {50, 100, 48,48});
+			for (nodo3; nodo3; nodo3 = nodo3->next_sibling())
+			{
+				myAtr = nodo3->first_attribute();
+				i = atoi(myAtr->value());
+				myAtr = myAtr->next_attribute();
+				j = atoi(myAtr->value());
+				map[i][j] = new Muro({ (j + 1) * ITEM_SIZE, (i + 1) * ITEM_SIZE + 80, ITEM_SIZE, ITEM_SIZE }); ///Añade 1 a "j" e "i" para compensar el marco exterior
+			}
+			nodo2 = nodo2->next_sibling();
+			nodo3 = nodo2->first_node();
+			//Fixed
+			for (nodo3; nodo3; nodo3 = nodo3->next_sibling())
+			{
+				myAtr = nodo3->first_attribute();
+				i = atoi(myAtr->value());
+				myAtr = myAtr->next_attribute();
+				j = atoi(myAtr->value());
+				map[i][j] = new MuroI({ (j + 1) * ITEM_SIZE, (i + 1) * ITEM_SIZE + 80, ITEM_SIZE, ITEM_SIZE }); ///Añade 1 a "j" e "i" para compensar el marco exterior
+			}
+		}
+		/*else if (nodo1->next_sibling())
+		{
+
+		nodo1 = nodo1->next_sibling();
+		myAtr = nodo1->first_attribute();
+		}*/
+		else
+		{
+
+		}
+	}
+
+	jugador2 = new Player(3, { 1 * ITEM_SIZE + 1, ITEM_SIZE + HUD_HEIGHT + 1, 48,48 }, map);
+	jugador1 = new Player(3, { 13 * ITEM_SIZE - 1, ITEM_SIZE + HUD_HEIGHT + 1, 48,48 }, map);
 	j1 = false;
 	j2 = false;
 

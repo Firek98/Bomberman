@@ -27,6 +27,7 @@ const std::string LEVEL2 = "LEVEL2";
 const std::string PATH_IMG = "../res/img/";
 const std::string PATH_FONT = "../res/ttf/";
 const std::string PATH_AU = "../res/au/";
+const std::string PATH_FILES = "../res/files/";
 
 const std::string SAIYAN_80 = "SAIYAN_80";
 const std::string LUIGI_40 = "LUIGI_40";

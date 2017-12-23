@@ -49,3 +49,8 @@
 	{
 		MENU, LVL1, LVL2, RANKING
 	};
+
+	enum GOtypes
+	{
+		MURO, MUROI, NADA
+	};
