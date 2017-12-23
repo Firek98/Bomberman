@@ -40,4 +40,12 @@
 		ARRIBA, ABAJO, IZQUIERDA, DERECHA
 	};
 
+	enum StateScene
+	{
+		RUNNING, GOTO1, GOTO2, GOTOR, EXIT
+	};
 
+	enum scene
+	{
+		MENU, LVL1, LVL2, RANKING
+	};

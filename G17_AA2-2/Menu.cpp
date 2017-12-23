@@ -78,5 +78,49 @@ void Menu::Draw()
 
 void Menu::Update()
 {
+	if (evento.motion.x >= menu['1'].x  && evento.motion.x <= (menu['1'].x + menu['1'].w) && evento.motion.y >= menu['1'].y && evento.motion.y <= (menu['1'].y + menu['1'].h))
+	{
+		if (señal)
+		{
+			estado = GOTO1;
+			señal = false;
+		}
+	}
 
+	else if (evento.motion.x >= menu['2'].x  && evento.motion.x <= (menu['2'].x + menu['2'].w) && evento.motion.y >= menu['2'].y && evento.motion.y <= (menu['2'].y + menu['2'].h))
+	{
+
+		if (señal)
+		{
+			estado = GOTO2;
+			señal = false;
+		}
+	}
+
+	else if (evento.motion.x >= menu['R'].x  && evento.motion.x <= (menu['R'].x + menu['R'].w) && evento.motion.y >= menu['R'].y && evento.motion.y <= (menu['R'].y + menu['R'].h))
+	{
+		if (señal)
+		{
+			estado = GOTOR;
+			señal = false;
+		}
+	}
+
+	else if (evento.motion.x >= menu['M'].x  && evento.motion.x <= (menu['M'].x + menu['M'].w) && evento.motion.y >= menu['M'].y && evento.motion.y <= (menu['M'].y + menu['M'].h))
+	{
+		if (señal)
+		{
+			std::cout << "No ere tu, soy yo";
+			señal = false;
+		}
+	}
+
+	else if (evento.motion.x >= menu['E'].x  && evento.motion.x <= (menu['E'].x + menu['E'].w) && evento.motion.y >= menu['E'].y && evento.motion.y <= (menu['E'].y + menu['E'].h))
+	{
+		if (señal)
+		{
+			estado = EXIT;
+			señal = false;
+		}
+	}
 }

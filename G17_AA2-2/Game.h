@@ -1,5 +1,6 @@
 #pragma once
 #include "Menu.h"
+#include "Level.h"
 class Game
 {
 public:
@@ -9,5 +10,7 @@ public:
 
 	bool isRunning;
 	Scene *game;
+
+	scene actual;
 };
 

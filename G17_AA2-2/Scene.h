@@ -9,5 +9,7 @@ public:
 	virtual void handleEvent();
 	virtual void Draw();
 	virtual void Update();
+
+	StateScene estado;
 };
 

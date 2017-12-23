@@ -89,6 +89,8 @@ Level::Level()
 //	jugador2 = new Player(3);
 	j1 = false;
 	j2 = false;
+
+	salir = false;
 }
 
 
@@ -102,27 +104,12 @@ void Level::handleEvent()
 	{
 		switch (evento.type) {
 		
-		case SDLK_w:
-			break;
-		case SDLK_s:
-			break;
-		case SDLK_a:
-			break;
-		case SDLK_d:
-			break;
-		case SDLK_SPACE:
-			break;
-		case SDLK_UP:
-			break;
-		case SDLK_DOWN:
-			break;
-		case SDLK_LEFT:
-			break;
-		case SDLK_RIGHT:
-			break;
-		case SDLK_LCTRL:
-			break;
+		case SDL_KEYDOWN:
 
+			if (evento.key.keysym.sym == SDLK_ESCAPE)
+			{
+				salir = true;
+			}
 		}
 
 	}
@@ -144,5 +131,8 @@ void Level::Draw()
 
 void Level::Update()
 {
-
+	if (salir)
+	{
+		estado = EXIT;
+	}
 }

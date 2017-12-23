@@ -25,4 +25,6 @@ public:
 	bool j2;
 
 	GameObject *map[11][13];
+
+	bool salir;
 };
