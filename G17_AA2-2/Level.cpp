@@ -85,8 +85,8 @@ Level::Level()
 
 	map[11][2];
 
-//	jugador1 = new Player(3);
-//	jugador2 = new Player(3);
+	jugador1 = new Player(3, {100, 50, 48,48});
+	jugador2 = new Player(3, {50, 100, 48,48});
 	j1 = false;
 	j2 = false;
 
@@ -126,6 +126,8 @@ void Level::Draw()
 			map[i][j]->Draw();
 		}
 	}
+	jugador1->Draw();
+	jugador2->Draw();
 	Renderer::Instance()->Render();
 }
 

@@ -94,3 +94,10 @@ void Player::Draw()
 {
 	Renderer::Instance()->PushSprite(PLAYER_SPRITE, sprites, pos);
 }
+
+
+
+void Player::Draw(int a)
+{
+	Renderer::Instance()->PushSprite(PLAYER_SPRITE, sprites, pos);
+}

@@ -18,6 +18,8 @@ public:
 
 	void Draw() override;
 
+	void Draw(int a);
+
 protected:
 
 	SDL_Rect pos;
