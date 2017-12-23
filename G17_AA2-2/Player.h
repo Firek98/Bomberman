@@ -17,8 +17,13 @@ public:
 	void movePlayer(positions a);
 
 	void Draw() override;
+	void HandleEvent(positions pos);
+	void Update();
 
-	void Draw(int a);
+	bool arriba;
+	bool izq;
+	bool derecha;
+	bool abajo;
 
 protected:
 

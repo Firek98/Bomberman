@@ -18,8 +18,8 @@ public:
 
 	SDL_Event evento;
 
-	GameObject *jugador1;
-	GameObject *jugador2;
+	Player *jugador1;
+	Player *jugador2;
 
 	bool j1;
 	bool j2;

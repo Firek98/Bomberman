@@ -110,6 +110,26 @@ void Level::handleEvent()
 			{
 				salir = true;
 			}
+			else if (evento.key.keysym.sym == SDLK_w)
+			{
+				jugador1->HandleEvent(positions::ARRIBA);
+			}
+			else if (evento.key.keysym.sym == SDLK_a)
+			{
+				jugador1->HandleEvent(positions::IZQUIERDA);
+			}
+			else if (evento.key.keysym.sym == SDLK_d)
+			{
+				jugador1->HandleEvent(positions::DERECHA);
+			}
+			else if (evento.key.keysym.sym == SDLK_s)
+			{
+				jugador1->HandleEvent(positions::ABAJO);
+			}
+			break;
+		default:
+			jugador1->HandleEvent(positions::NADA);
+			break;
 		}
 
 	}
@@ -133,8 +153,12 @@ void Level::Draw()
 
 void Level::Update()
 {
+
+	jugador1->Update();
+
 	if (salir)
 	{
 		estado = EXIT;
 	}
+
 }
