@@ -37,7 +37,7 @@
 
 	enum class positions {
 
-		ARRIBA, ABAJO, IZQUIERDA, DERECHA, NADA
+		ARRIBA, ABAJO, IZQUIERDA, DERECHA, BOMBA, NADA
 	};
 
 	enum StateScene

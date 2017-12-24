@@ -29,7 +29,10 @@ public:
 	bool derecha;
 	bool abajo;
 
+	bool bombapuesta;
 	//GameObject *map[11][13];
+
+	GameObject *bomba;
 
 protected:
 

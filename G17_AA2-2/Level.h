@@ -26,5 +26,6 @@ public:
 
 	GameObject *map[11][13];
 
+	GameObject *bomba;
 	bool salir;
 };

@@ -146,6 +146,8 @@ Level::Level(int levelNum)
 	j2 = false;
 
 	salir = false;
+
+	//bomba = new Bomb({});
 }
 
 
@@ -181,6 +183,11 @@ void Level::handleEvent()
 			{
 				jugador1->HandleEvent(positions::ABAJO);
 			}
+			else if (evento.key.keysym.sym == SDLK_LSHIFT)
+			{
+				std::cout << "Me toco";
+				jugador1->HandleEvent(positions::BOMBA);
+			}
 			break;
 		default:
 			jugador1->HandleEvent(positions::NADA);
@@ -203,6 +210,17 @@ void Level::Draw()
 	}
 	jugador1->Draw();
 	jugador2->Draw();
+
+	if (jugador1->bombapuesta)
+	{
+		jugador1->bomba->Draw();
+	
+	}
+	else if (jugador2->bombapuesta)
+	{
+		jugador2->bomba->Draw();
+	}
+	
 	Renderer::Instance()->Render();
 }
 

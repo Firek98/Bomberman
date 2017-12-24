@@ -1,5 +1,5 @@
 #include "Player.h"
-
+#include "Bomb.h"
 
 
 Player::Player(int a, SDL_Rect recta, GameObject *map[11][13])
@@ -9,6 +9,7 @@ Player::Player(int a, SDL_Rect recta, GameObject *map[11][13])
 	velocidad = 1;
 	invencible = false;
 	bombSet = false;
+	bombapuesta = false;
 	Puntuation = 0;
 
 	Vector2 PlayerSize = Renderer::Instance()->GetTextureSize(PLAYER_SPRITE);
@@ -136,6 +137,11 @@ void Player::HandleEvent(positions pos)
 		derecha = true;
 		abajo = false;
 		break;
+
+	case positions::BOMBA:
+
+		bombSet = true;
+		break;
 	default:
 		break;
 	}
@@ -205,6 +211,19 @@ void Player::Update()
 			pos.x += velocidad;
 		}
 		derecha = false;
+	}
+	else if (bombSet)
+	{
+		if (!bombapuesta)
+		{
+			std::cout << "Me dibujo";
+
+			bomba = new Bomb(pos);
+			bomba->Draw();
+			bombapuesta = true;
+			bombSet = false;
+		}
+	
 	}
 
 }
