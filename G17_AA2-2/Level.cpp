@@ -183,14 +183,42 @@ void Level::handleEvent()
 			{
 				jugador1->HandleEvent(positions::ABAJO);
 			}
-			else if (evento.key.keysym.sym == SDLK_LSHIFT)
+			else if (evento.key.keysym.sym == SDLK_SPACE)
 			{
 				std::cout << "Me toco";
 				jugador1->HandleEvent(positions::BOMBA);
 			}
+
+			if (evento.key.keysym.sym == SDLK_UP)
+			{
+				jugador2->HandleEvent(positions::ARRIBA);
+			}
+
+			else if (evento.key.keysym.sym == SDLK_DOWN)
+			{
+				jugador2->HandleEvent(positions::ABAJO);
+			}
+
+			else if (evento.key.keysym.sym == SDLK_LEFT)
+			{
+				jugador2->HandleEvent(positions::IZQUIERDA);
+			}
+
+			else if (evento.key.keysym.sym == SDLK_RIGHT)
+			{
+				jugador2->HandleEvent(positions::DERECHA);
+			}
+
+			else if (evento.key.keysym.sym == SDLK_RCTRL)
+			{
+				jugador2->HandleEvent(positions::BOMBA);
+			}
+
 			break;
+
 		default:
 			jugador1->HandleEvent(positions::NADA);
+			jugador2->HandleEvent(positions::NADA);
 			break;
 		}
 
@@ -228,6 +256,7 @@ void Level::Update()
 {
 
 	jugador1->Update();
+	jugador2->Update();
 
 	if (salir)
 	{

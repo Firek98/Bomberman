@@ -216,8 +216,6 @@ void Player::Update()
 	{
 		if (!bombapuesta)
 		{
-			std::cout << "Me dibujo";
-
 			bomba = new Bomb(pos);
 			bomba->Draw();
 			bombapuesta = true;
