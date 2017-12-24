@@ -145,11 +145,10 @@ void Player::Update()
 {
 	std::cout << pos.x << ", " << pos.y << std::endl;
 	if (arriba &&
-		pos.y - velocidad > HUD_HEIGHT + ITEM_SIZE &&
-		myMap[(int)((pos.x + 1) / 48) - 1][(int)((pos.y - velocidad - 80) / 48) - 1]->tipo != GOtypes::MUROI &&
-		myMap[(int)((pos.x + 1) / 48) - 1][(int)((pos.y - velocidad - 80) / 48) - 1]->tipo != GOtypes::MURO  &&
-		myMap[(int)((pos.x - 1 + 48) / 48) - 1][(int)((pos.y - velocidad - 80) / 48) - 1]->tipo != GOtypes::MUROI &&
-		myMap[(int)((pos.x - 1 + 48) / 48) - 1][(int)((pos.y - velocidad - 80) / 48) - 1]->tipo != GOtypes::MURO)
+		pos.y - velocidad >= HUD_HEIGHT + ITEM_SIZE &&
+		myMap[(int)((pos.y - velocidad - HUD_HEIGHT) / 48) - 1][(int)((pos.x + 1) / 48) - 1]->tipo != GOtypes::MUROI &&
+		myMap[(int)((pos.y - velocidad - HUD_HEIGHT) / 48) - 1][(int)((pos.x - 1 + 48) / 48) - 1]->tipo != GOtypes::MURO)
+
 	{
 		if (powerUp == PowerUp::PATINES)
 		{
@@ -163,11 +162,8 @@ void Player::Update()
 	}
 
 	else if (abajo &&
-		pos.y + velocidad + ITEM_SIZE < SCREEN_HEIGHT - ITEM_SIZE &&
-		myMap[(int)((pos.x + 1) / 48) - 1][(int)((pos.y + velocidad - 80) / 48) - 1]->tipo != GOtypes::MUROI &&
-		myMap[(int)((pos.x + 1) / 48) - 1][(int)((pos.y + velocidad - 80) / 48) - 1]->tipo != GOtypes::MURO  &&
-		myMap[(int)((pos.x - 1 + 48) / 48) - 1][(int)((pos.y + velocidad - 80) / 48) - 1]->tipo != GOtypes::MUROI &&
-		myMap[(int)((pos.x - 1 + 48) / 48) - 1][(int)((pos.y + velocidad - 80) / 48) - 1]->tipo != GOtypes::MURO)
+		myMap[(int)((pos.y + 48 + velocidad - 80) / 48) - 1][(int)((pos.x + 1) / 48) - 1]->tipo == GOtypes::NADA &&    // II
+		myMap[(int)((pos.y + 48 + velocidad - 80) / 48) - 1][(int)((pos.x + 48 - 1) / 48) - 1]->tipo == GOtypes::NADA) // ID
 	{
 		if (powerUp == PowerUp::PATINES)
 		{
@@ -180,9 +176,9 @@ void Player::Update()
 		abajo = false;
 	}
 	else if (izq &&
-		pos.x - velocidad > ITEM_SIZE /*&&
-		myMap[(int)((pos.x - velocidad) / 48)][(int)((pos.y - 80) / 48)]->tipo != GOtypes::MUROI &&
-		myMap[(int)((pos.x - velocidad) / 48)][(int)((pos.y - 80) / 48)]->tipo != GOtypes::MURO*/)
+		pos.x - velocidad >= ITEM_SIZE &&
+		myMap[(int)((pos.y + 1 - 80) / 48) - 1][(int)((pos.x - velocidad) / 48) - 1]->tipo == GOtypes::NADA &&
+		myMap[(int)((pos.y - 1 + 48 - 80) / 48) - 1][(int)((pos.x - velocidad) / 48) - 1]->tipo == GOtypes::NADA)
 
 	{
 		if (powerUp == PowerUp::PATINES)
@@ -196,9 +192,9 @@ void Player::Update()
 		izq = false;
 	}
 	else if (derecha &&
-		pos.x + velocidad + ITEM_SIZE < SCREEN_WIDTH - ITEM_SIZE /*&&
-		myMap[(int)((pos.x + velocidad) / 48)][(int)((pos.y - 80) / 48)]->tipo != GOtypes::MUROI &&
-		myMap[(int)((pos.x + velocidad) / 48)][(int)((pos.y - 80) / 48)]->tipo != GOtypes::MURO*/)
+		pos.x + velocidad + ITEM_SIZE <= SCREEN_WIDTH - ITEM_SIZE &&
+		myMap[(int)((pos.y + 1 - 80) / 48) - 1][(int)((pos.x + 48 + velocidad) / 48) - 1]->tipo == GOtypes::NADA &&
+		myMap[(int)((pos.y - 1 + 48 - 80) / 48) - 1][(int)((pos.x + 48 + velocidad) / 48) - 1]->tipo == GOtypes::NADA)
 	{
 		if (powerUp == PowerUp::PATINES)
 		{

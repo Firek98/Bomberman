@@ -37,16 +37,16 @@ Level::Level(int levelNum)
 	std::string cont(buffer.str());
 	document.parse<0>(&cont[0]);
 
-	rapidxml::xml_node<> *raiz = document.first_node();
-	rapidxml::xml_node<> *nodo1 = raiz->first_node(); ///// Gets level
-	rapidxml::xml_node<> *nodo2 = nodo1->first_node(); //// Gets destructible/fixed
-	rapidxml::xml_node<> *nodo3 = nodo2->first_node(); //// Gets wall
+	//rapidxml::xml_node<> *raiz = document.first_node();
+	//rapidxml::xml_node<> *nodo1 = raiz->first_node(); ///// Gets level
+	//rapidxml::xml_node<> *nodo2 = nodo1->first_node(); //// Gets destructible/fixed
+	//rapidxml::xml_node<> *nodo3 = nodo2->first_node(); //// Gets wall
 
-	rapidxml::xml_attribute<> *atr = nodo1->first_attribute();
+	///rapidxml::xml_attribute<> *atr = nodo1->first_attribute();
 	//rapidxml::xml_attribute<> *myAtr = nodo1->first_attribute();
 	rapidxml::xml_attribute<> *myAtr;
 
-	std::string strung = atr->value();
+	/*std::string strung = atr->value();
 
 	int auxX;
 	auxX = atoi(strung.c_str());
@@ -55,11 +55,14 @@ Level::Level(int levelNum)
 	strung = atr->value();
 
 	int auxY;
-	auxY = atoi(strung.c_str());
+	auxY = atoi(strung.c_str());*/
 
 	int i, j;
 
 	///--------------------------------------------------------------------------------------------------------------------
+	
+
+	
 	for (int x = 0; x < 11; x++)
 	{
 		for (int y = 0; y < 13; y++)
@@ -68,7 +71,7 @@ Level::Level(int levelNum)
 		}
 	}
 
-	for (nodo1; nodo1; nodo1 = nodo1->next_sibling())
+	/*for (nodo1; nodo1; nodo1 = nodo1->next_sibling())
 	{
 		myAtr = nodo1->first_attribute();
 		int a = atoi(myAtr->value());
@@ -97,20 +100,48 @@ Level::Level(int levelNum)
 				map[i][j] = new MuroI({ (j + 1) * ITEM_SIZE, (i + 1) * ITEM_SIZE + 80, ITEM_SIZE, ITEM_SIZE }); ///Añade 1 a "j" e "i" para compensar el marco exterior
 			}
 		}
-		/*else if (nodo1->next_sibling())
+		else if (nodo1->next_sibling())
 		{
 
 		nodo1 = nodo1->next_sibling();
 		myAtr = nodo1->first_attribute();
-		}*/
+		}
 		else
 		{
 
 		}
+	}*/
+
+	rapidxml::xml_node<> *raiz = document.first_node();
+	rapidxml::xml_node<> *nodo1 = raiz->first_node(); ///// Gets level
+	rapidxml::xml_node<> *nodoDestr = nodo1->first_node("Destructible"); //// Gets destructible
+	rapidxml::xml_node<> *nodoFixed = nodo1->first_node("Fixed"); //// Gets fixed
+	rapidxml::xml_node<> *nodoWall; //// Gets wall
+
+	nodoWall = nodoDestr->first_node("Wall");
+
+	while (nodoWall != nullptr)
+	{
+		i = atoi(nodoWall->first_attribute("i")->value());
+		j = atoi(nodoWall->first_attribute("j")->value());
+
+		map[i][j] = new Muro({(j + 1) * ITEM_SIZE, (i + 1) * ITEM_SIZE + 80, ITEM_SIZE, ITEM_SIZE});
+		nodoWall = nodoWall->next_sibling();
 	}
 
-	jugador2 = new Player(3, { 1 * ITEM_SIZE + 1, ITEM_SIZE + HUD_HEIGHT + 1, 48,48 }, map);
-	jugador1 = new Player(3, { 13 * ITEM_SIZE - 1, ITEM_SIZE + HUD_HEIGHT + 1, 48,48 }, map);
+	nodoWall = nodoFixed->first_node("Wall");
+
+	while (nodoWall != nullptr)
+	{
+		i = atoi(nodoWall->first_attribute("i")->value());
+		j = atoi(nodoWall->first_attribute("j")->value());
+
+		map[i][j] = new MuroI({ (j + 1) * ITEM_SIZE + 1, (i + 1) * ITEM_SIZE + 80, ITEM_SIZE, ITEM_SIZE });
+		nodoWall = nodoWall->next_sibling();
+	}
+
+	jugador2 = new Player(3, { 1 * ITEM_SIZE, ITEM_SIZE + HUD_HEIGHT, 48,48 }, map);
+	jugador1 = new Player(3, { 6 * ITEM_SIZE, ITEM_SIZE + HUD_HEIGHT, 48,48 }, map);
 	j1 = false;
 	j2 = false;
 
