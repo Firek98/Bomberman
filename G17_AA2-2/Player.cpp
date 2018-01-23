@@ -216,7 +216,9 @@ void Player::Update()
 	{
 		if (!bombapuesta)
 		{
-			bomba = new Bomb(pos);
+			bomba = new Bomb({ ((int)((pos.x + ITEM_SIZE /2) / ITEM_SIZE)) * 48,
+								((int)(((pos.y - HUD_HEIGHT + ITEM_SIZE/2)/48))) * 48 + HUD_HEIGHT,
+				pos.w, pos.h });
 			bomba->Draw();
 			bombapuesta = true;
 			bombSet = false;
